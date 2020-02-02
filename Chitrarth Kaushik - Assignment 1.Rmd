@@ -1,0 +1,23 @@
+---
+title: "Assignment - 1"
+author: "Chitrarth Kaushik"
+date: "2/2/2020"
+output: html_document
+---
+
+## Introduction
+The article [Is the Russian Investigation really another Watergate](https://projects.fivethirtyeight.com/russia-investigation/) relates to the invsetigation of Russian interferene in the 2016 US presidential election. The invsetigation was overseen by Robert Mueller in the capacity of special counsel. The article specifically compares Muller's Russian interference investigation with the past investigations that he has performed.
+
+```{r importing excel, eval=TRUE}
+x <- "https://raw.githubusercontent.com/chitrarth2018/607_Assignment_1/master/russia-investigation.csv"
+Russia_Investigation <- read.csv(file = x, head = TRUE, sep=",")
+
+```
+
+```{r renaming the columns, eval=TRUE}
+names(Russia_Investigation)[names(Russia_Investigation) == 'investigation.start'] <- 'invest.st.dt'
+names(Russia_Investigation)[names(Russia_Investigation) == 'investigation.end'] <- 'invest.en.dt'
+```
+
+## Conclusion
+Based on the data point comparisons presented in the article, it appears that the Russian intereference investigation cannot be compared with Watergate. Some of the key comparison metrics that distinguish the Mueller investigation from the Watergate investigation are the nationailty of the people charged (many Russians charged in Muller Investigation) , length of Muller invsetigation (less than two years), and people close to the president being charged (very few pople who worked in and around Trump's campaign charged). The above difference point toward the fact that Mueller invsetigation may not turn out to be another Watergate unless some new facts come to light as a part of the investigation.  
